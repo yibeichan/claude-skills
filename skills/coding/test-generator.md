@@ -49,4 +49,3 @@ Complete test suite with:
 
 ## Related Skills
 - `code-reviewer.md` - For reviewing generated tests
-- `mocking-assistant.md` - For complex mock object creation

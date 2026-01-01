@@ -52,5 +52,4 @@ Complete API documentation including:
 - Include existing documentation standards to follow
 
 ## Related Skills
-- `readme-generator.md` - For project README files
-- `api-documenter.md` - Specialized for API documentation
+- More documentation-focused skills will be added to complement this one

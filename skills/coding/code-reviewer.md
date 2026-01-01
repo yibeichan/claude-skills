@@ -44,5 +44,4 @@ Claude will identify:
 - Include relevant parts of the codebase for better context
 
 ## Related Skills
-- `security-auditor.md` - For security-focused reviews
-- `refactoring-assistant.md` - For code improvement suggestions
+- More skills will be added to complement this one

@@ -49,5 +49,4 @@ Question: What trends do you see and what should we focus on?
 - Mention any known data quality issues
 
 ## Related Skills
-- `visualization-suggester.md` - For chart/graph recommendations
-- `statistical-analyst.md` - For advanced statistical analysis
+- More analysis skills will be added to complement this one

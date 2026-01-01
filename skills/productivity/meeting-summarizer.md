@@ -55,5 +55,4 @@ Mike to create design mockups by Friday.
 - Specify the level of detail needed
 
 ## Related Skills
-- `task-organizer.md` - For organizing action items
-- `agenda-creator.md` - For creating meeting agendas
+- More productivity skills will be added to complement this one
