@@ -1,0 +1,8 @@
+{
+    "name": "claude-skills",
+    "description": "customized claude skills",
+    "version": "1.0.0",
+    "author": {
+        "name": "Yibei Chen"
+    }
+}
