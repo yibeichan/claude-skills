@@ -20,8 +20,8 @@ const packageJson = JSON.parse(fs.readFileSync(path.join(__dirname, 'package.jso
 // Load skills manifest
 const manifest = JSON.parse(fs.readFileSync(path.join(__dirname, 'skills.json'), 'utf8'));
 
-// Default Claude Code skills directory
-const DEFAULT_SKILLS_DIR = path.join(process.env.HOME || process.env.USERPROFILE, '.codex', 'skills');
+// Default Claude Code skills directory (relative to current working directory)
+const DEFAULT_SKILLS_DIR = path.join(process.cwd(), '.claude', 'skills');
 
 function printHeader() {
   console.log(`\x1b[36mClaude Skills\x1b[0m v${packageJson.version}`);
@@ -123,6 +123,62 @@ function installAll(options = {}) {
   return success;
 }
 
+function uninstallSkill(skillName, options = {}) {
+  const targetDir = options.target || DEFAULT_SKILLS_DIR;
+  const targetPath = path.join(targetDir, skillName);
+
+  if (!fs.existsSync(targetPath)) {
+    console.error(`\x1b[31mError: Skill '${skillName}' is not installed at ${targetPath}\x1b[0m`);
+    return false;
+  }
+
+  console.log(`Uninstalling ${skillName}...`);
+  console.log(`  Removing: ${targetPath}`);
+
+  fs.rmSync(targetPath, { recursive: true, force: true });
+
+  // Clean up empty parent directories
+  try {
+    fs.rmdirSync(targetDir);
+    fs.rmdirSync(path.dirname(targetDir));
+  } catch (e) {
+    // Ignore if directories are not empty
+  }
+
+  console.log(`\x1b[32m✓ Successfully uninstalled ${skillName}\x1b[0m\n`);
+  return true;
+}
+
+function uninstallAll(options = {}) {
+  printHeader();
+  console.log('Uninstalling all skills...\n');
+
+  const targetDir = options.target || DEFAULT_SKILLS_DIR;
+
+  if (!fs.existsSync(targetDir)) {
+    console.log('No skills installed.');
+    return true;
+  }
+
+  const installedSkills = fs.readdirSync(targetDir, { withFileTypes: true })
+    .filter(d => d.isDirectory())
+    .map(d => d.name);
+
+  if (installedSkills.length === 0) {
+    console.log('No skills installed.');
+    return true;
+  }
+
+  let success = true;
+  for (const skillName of installedSkills) {
+    if (!uninstallSkill(skillName, options)) {
+      success = false;
+    }
+  }
+
+  return success;
+}
+
 function printHelp() {
   printHeader();
   console.log(`Usage: npx @yibeichen/claude-skills [command] [options]
@@ -131,18 +187,21 @@ Commands:
   list, ls              List all available skills
   install <skill>       Install a specific skill
   install-all           Install all skills
+  uninstall <skill>     Uninstall a specific skill
+  uninstall-all         Uninstall all skills
 
 Options:
-  --target, -t <dir>    Target directory for skills (default: ~/.codex/skills)
+  --target, -t <dir>    Target directory for skills (default: ./.claude/skills)
   --overwrite, -o       Overwrite existing skill directory
   --help, -h            Show this help message
 
 Examples:
   npx @yibeichen/claude-skills list
   npx @yibeichen/claude-skills install bidsapp-nidm-standards
-  npx @yibeichen/claude-skills install scientific-writer --target ./skills
+  npx @yibeichen/claude-skills install scientific-writer --target ./my-skills
   npx @yibeichen/claude-skills install-all --overwrite
-  npx @yibeichen/claude-skills install bidsapp-nidm-standards -t ~/.claude/skills
+  npx @yibeichen/claude-skills uninstall neuroimaging-qc
+  npx @yibeichen/claude-skills uninstall-all
 `);
 }
 
@@ -185,6 +244,19 @@ function main() {
 
     case 'install-all':
       installAll(options);
+      break;
+
+    case 'uninstall':
+      if (args[1] && !args[1].startsWith('-')) {
+        uninstallSkill(args[1], options);
+      } else {
+        console.error('\x1b[31mError: Please specify a skill name.\x1b[0m');
+        console.log("Run 'npx @yibeichen/claude-skills list' to see available skills.");
+      }
+      break;
+
+    case 'uninstall-all':
+      uninstallAll(options);
       break;
 
     default:

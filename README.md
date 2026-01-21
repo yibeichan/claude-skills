@@ -36,6 +36,8 @@ npx @yibeichen/claude-skills install scientific-writer
 
 ## Installation
 
+Skills are installed to `.claude/skills/` in your current working directory by default.
+
 ### Quick Install (Recommended)
 
 Install a specific skill using npx:
@@ -88,6 +90,25 @@ python install.py --all
 
 # Custom target
 python install.py scientific-writer --target ./skills
+```
+
+### Uninstall Skills
+
+Remove installed skills:
+
+```bash
+# Uninstall a specific skill
+npx @yibeichen/claude-skills uninstall neuroimaging-qc
+
+# Uninstall all skills
+npx @yibeichen/claude-skills uninstall-all
+```
+
+Or with Python:
+
+```bash
+python install.py --uninstall neuroimaging-qc
+python install.py --uninstall-all
 ```
 
 ## Development

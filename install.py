@@ -4,9 +4,11 @@ Install Claude skills from this repository to a target directory.
 
 Usage:
     python install.py --list                          # List available skills
-    python install.py bidsapp-nidm-standards          # Install a skill (default: ~/.codex/skills/)
+    python install.py bidsapp-nidm-standards          # Install a skill (default: ./.claude/skills/)
     python install.py scientific-writer --target ./skills
     python install.py --all                           # Install all skills
+    python install.py --uninstall neuroimaging-qc     # Uninstall a skill
+    python install.py --uninstall-all                 # Uninstall all skills
 """
 
 import argparse
@@ -18,8 +20,8 @@ from pathlib import Path
 from typing import Optional
 
 
-# Default Claude Code skills directory
-DEFAULT_SKILLS_DIR = Path.home() / ".codex" / "skills"
+# Default Claude Code skills directory (relative to current working directory)
+DEFAULT_SKILLS_DIR = Path.cwd() / ".claude" / "skills"
 
 # Repository root
 REPO_ROOT = Path(__file__).parent
@@ -102,6 +104,51 @@ def install_all_skills(target_dir: Path, overwrite: bool = False) -> bool:
     return success
 
 
+def uninstall_skill(skill_name: str, target_dir: Path) -> bool:
+    """Uninstall a skill from the target directory."""
+    target_path = target_dir / skill_name
+
+    if not target_path.exists():
+        print(f"Error: Skill '{skill_name}' is not installed at {target_path}")
+        return False
+
+    print(f"Uninstalling {skill_name}...")
+    print(f"  Removing: {target_path}")
+
+    shutil.rmtree(target_path)
+
+    # Clean up empty parent directories
+    try:
+        target_dir.rmdir()
+        target_dir.parent.rmdir()
+    except OSError:
+        # Ignore if directories are not empty
+        pass
+
+    print(f"✓ Successfully uninstalled {skill_name}")
+    return True
+
+
+def uninstall_all_skills(target_dir: Path) -> bool:
+    """Uninstall all skills."""
+    if not target_dir.exists():
+        print("No skills installed.")
+        return True
+
+    installed_skills = [d for d in target_dir.iterdir() if d.is_dir()]
+
+    if not installed_skills:
+        print("No skills installed.")
+        return True
+
+    success = True
+    for skill_dir in installed_skills:
+        if not uninstall_skill(skill_dir.name, target_dir):
+            success = False
+
+    return success
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Install Claude skills from this repository",
@@ -112,20 +159,21 @@ Examples:
   python install.py bidsapp-nidm-standards
   python install.py scientific-writer --target ./my-skills
   python install.py --all --overwrite
-  python install.py bidsapp-nidm-standards --target ~/.claude/skills
+  python install.py --uninstall neuroimaging-qc
+  python install.py --uninstall-all
         """
     )
 
     parser.add_argument(
         "skill",
         nargs="?",
-        help="Name of the skill to install (use --list to see available)"
+        help="Name of the skill to install/uninstall (use --list to see available)"
     )
     parser.add_argument(
         "--target", "-t",
         type=Path,
         default=DEFAULT_SKILLS_DIR,
-        help=f"Target directory for skills (default: {DEFAULT_SKILLS_DIR})"
+        help=f"Target directory for skills (default: ./.claude/skills)"
     )
     parser.add_argument(
         "--list", "-l",
@@ -142,6 +190,16 @@ Examples:
         action="store_true",
         help="Overwrite existing skill directory"
     )
+    parser.add_argument(
+        "--uninstall",
+        action="store_true",
+        help="Uninstall the specified skill"
+    )
+    parser.add_argument(
+        "--uninstall-all",
+        action="store_true",
+        help="Uninstall all skills"
+    )
 
     args = parser.parse_args()
 
@@ -149,6 +207,20 @@ Examples:
     if args.list:
         list_skills()
         return 0
+
+    # Uninstall all mode
+    if args.uninstall_all:
+        success = uninstall_all_skills(args.target)
+        return 0 if success else 1
+
+    # Uninstall mode
+    if args.uninstall:
+        if not args.skill:
+            print("Error: Please specify a skill name to uninstall.")
+            print("Run 'python install.py --list' to see available skills.")
+            return 1
+        success = uninstall_skill(args.skill, args.target)
+        return 0 if success else 1
 
     # Install all mode
     if args.all:
