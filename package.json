@@ -1,6 +1,6 @@
 {
   "name": "@yibeichen/claude-skills",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Claude skills for neuroimaging research workflows and scientific writing",
   "type": "module",
   "bin": {
