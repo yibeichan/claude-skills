@@ -1,0 +1,36 @@
+{
+  "$schema": "https://skills.anthropic.com/schema/v1",
+  "name": "claude-skills",
+  "version": "1.0.0",
+  "description": "Claude skills for neuroimaging research workflows and scientific writing",
+  "repository": "https://github.com/yibeichen/claude-skills",
+  "skills": [
+    {
+      "name": "bidsapp-nidm-standards",
+      "version": "1.0.0",
+      "description": "Standards for creating NIDM-integrated BIDSapps that run through BABS. Trigger keywords: BIDSapp, NIDM, BABS, FreeSurfer, repository structure",
+      "path": "skills/bidsapp-nidm-standards",
+      "author": "Yibei Chen",
+      "tags": ["neuroimaging", "BIDS", "NIDM", "BABS", "BIDSapp"],
+      "dependencies": []
+    },
+    {
+      "name": "neuroimaging-qc",
+      "version": "1.0.0",
+      "description": "Evidence-based QC decision-making for neuroimaging data (fMRI, EEG, fNIRS, structural MRI). Interpret QC metrics from fMRIPrep, MRIQC, FreeSurfer, MNE-Python, Homer3 to make justified inclusion/exclusion decisions. Trigger keywords: QC, quality control, fMRIPrep, MRIQC, motion, exclusion, subject filtering",
+      "path": "skills/neuroimaging-qc",
+      "author": "Yibei Chen",
+      "tags": ["neuroimaging", "QC", "fMRI", "EEG", "fNIRS", "quality-control"],
+      "dependencies": []
+    },
+    {
+      "name": "scientific-writer",
+      "version": "1.0.0",
+      "description": "Write rigorous scientific manuscripts following academic standards (IMRAD, citations, figures, CONSORT/STROBE/PRISMA guidelines). Trigger keywords: scientific writing, research papers, grant proposals, literature reviews",
+      "path": "skills/scientific-writer",
+      "author": "Yibei Chen",
+      "tags": ["writing", "research", "academic", "publications"],
+      "dependencies": []
+    }
+  ]
+}

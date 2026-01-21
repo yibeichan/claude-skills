@@ -1,0 +1,44 @@
+{
+  "name": "@yibeichen/claude-skills",
+  "version": "1.0.0",
+  "description": "Claude skills for neuroimaging research workflows and scientific writing",
+  "type": "module",
+  "bin": {
+    "claude-skills": "./cli.js"
+  },
+  "scripts": {
+    "list": "node cli.js list",
+    "add": "node scripts/add-skill.js"
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "skills",
+    "neuroimaging",
+    "bids",
+    "nidm",
+    "scientific-writing"
+  ],
+  "author": "Yibei Chen",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yibeichen/claude-skills.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yibeichen/claude-skills/issues"
+  },
+  "homepage": "https://github.com/yibeichen/claude-skills#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "cli.js",
+    "install.py",
+    "skills.json",
+    "skills/**/*"
+  ]
+}
