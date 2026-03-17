@@ -33,10 +33,10 @@
       "dependencies": []
     },
     {
-      "name": "dicom-to-fmriprep",
+      "name": "dicom2fmriprep",
       "version": "1.0.0",
       "description": "Generate scripts for the full fMRI preprocessing pipeline: DICOM to BIDS conversion (heudiconv), BIDS validation, fMRIPrep with Singularity, and large-scale HPC processing via BABS on SLURM. Trigger keywords: DICOM, BIDS, heudiconv, fMRIPrep, BABS, SLURM, preprocessing, dcm2niix, heuristic",
-      "path": "skills/dicom-to-fmriprep",
+      "path": "skills/dicom2fmriprep",
       "author": "Yibei Chen",
       "tags": ["neuroimaging", "fMRI", "BIDS", "fMRIPrep", "heudiconv", "BABS", "SLURM", "preprocessing"],
       "dependencies": []

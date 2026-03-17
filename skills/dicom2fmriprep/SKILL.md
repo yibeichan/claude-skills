@@ -1,5 +1,5 @@
 ---
-name: dicom-to-fmriprep
+name: dicom2fmriprep
 description: Generate scripts for the full fMRI preprocessing pipeline from raw DICOM files through BIDS conversion (heudiconv) to fMRIPrep, including HPC/SLURM execution via BABS. Use this skill whenever someone needs to preprocess fMRI data, convert DICOMs to BIDS, write heudiconv heuristics, run fMRIPrep on a cluster, set up BABS projects, fix BIDS validation errors, or generate any scripts related to the DICOM-to-fMRIPrep pipeline.
 ---
 
