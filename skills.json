@@ -24,6 +24,24 @@
       "dependencies": []
     },
     {
+      "name": "fmri-ssm",
+      "version": "1.0.0",
+      "description": "State-space models (SSMs) for fMRI analysis: HMM, HMM-MAR, sticky/HDP-HMM, IO-HMM, SLDS, rSLDS, SNLDS. Covers resting-state, task-based (MID, SST, N-back), and naturalistic fMRI. Trigger keywords: HMM on brain data, brain state dynamics, dynamic FC, switching dynamics, latent states from BOLD, SLDS on neural timeseries, fMRI state-space modeling",
+      "path": "skills/fmri-ssm",
+      "author": "Yibei Chen",
+      "tags": ["neuroimaging", "fMRI", "HMM", "state-space", "brain-dynamics", "SSM", "resting-state"],
+      "dependencies": []
+    },
+    {
+      "name": "dicom-to-fmriprep",
+      "version": "1.0.0",
+      "description": "Generate scripts for the full fMRI preprocessing pipeline: DICOM to BIDS conversion (heudiconv), BIDS validation, fMRIPrep with Singularity, and large-scale HPC processing via BABS on SLURM. Trigger keywords: DICOM, BIDS, heudiconv, fMRIPrep, BABS, SLURM, preprocessing, dcm2niix, heuristic",
+      "path": "skills/dicom-to-fmriprep",
+      "author": "Yibei Chen",
+      "tags": ["neuroimaging", "fMRI", "BIDS", "fMRIPrep", "heudiconv", "BABS", "SLURM", "preprocessing"],
+      "dependencies": []
+    },
+    {
       "name": "scientific-writer",
       "version": "1.0.0",
       "description": "Write rigorous scientific manuscripts following academic standards (IMRAD, citations, figures, CONSORT/STROBE/PRISMA guidelines). Trigger keywords: scientific writing, research papers, grant proposals, literature reviews",

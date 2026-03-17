@@ -1,0 +1,26 @@
+{
+  "skill_name": "fmri-dicom-to-fmriprep",
+  "evals": [
+    {
+      "id": 0,
+      "name": "heudiconv-heuristic",
+      "prompt": "I have a bunch of unsorted DICOMs from a Siemens scanner with T1w MPRAGE (176 slices), resting-state fMRI (300 volumes, TR=2s), and AP/PA spin-echo fieldmaps. The DICOMs are in /data/raw_dicoms/ organized by subject folders like S001, S002 etc. Help me write scripts to convert them to BIDS format using heudiconv. I need the heuristic.py file and a bash script to run the conversion for all subjects.",
+      "expected_output": "A heuristic.py with correct create_key/infotodict matching the described sequences, and a bash script running heudiconv two-pass workflow",
+      "files": []
+    },
+    {
+      "id": 1,
+      "name": "babs-setup",
+      "prompt": "I need to run fMRIPrep 24.1.1 on 200 subjects on our SLURM cluster. We have Singularity available via 'module load singularity/3.8'. Our cluster has partitions 'normal' (max 24h) and 'long' (max 72h). Scratch space is at /scratch/$USER. The BIDS dataset is already a DataLad dataset at /project/data/bids_datalad. I want MNI152NLin2009cAsym:res-2 output space and CIFTI output. Can you help me set up BABS for this?",
+      "expected_output": "Step-by-step instructions including: building Singularity image, creating container DataLad dataset, BABS config YAML with correct cluster resources, and babs init/check-setup/submit commands",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "bids-fix",
+      "prompt": "My BIDS dataset at /data/bids_study fails validation. The errors are: (1) TaskName is missing from all func JSON sidecars, the task is 'rest', (2) IntendedFor is not set on the fieldmap JSON files - the fieldmaps are in fmap/ and should point to the bold runs in func/, and (3) there are some .DS_Store files scattered around. Generate a Python script to fix all of these issues.",
+      "expected_output": "A Python script that adds TaskName to func sidecars, sets IntendedFor in fmap sidecars pointing to BOLD files, adds .DS_Store to .bidsignore, and optionally removes .DS_Store files",
+      "files": []
+    }
+  ]
+}
