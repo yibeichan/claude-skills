@@ -4,35 +4,13 @@ A collection of reusable Claude skills for neuroimaging research workflows and s
 
 ## Available Skills
 
-### [bidsapp-nidm-standards](skills/bidsapp-nidm-standards/SKILL.md)
-Standards for creating NIDM-integrated BIDSapps that run through BABS.
-
-**Trigger keywords**: BIDSapp, NIDM, BABS, FreeSurfer, repository structure
-
-**Install**:
-```bash
-npx @yibeichen/claude-skills install bidsapp-nidm-standards
-```
-
-### [neuroimaging-qc](skills/neuroimaging-qc/SKILL.md)
-Evidence-based QC decision-making for neuroimaging data (fMRI, EEG, fNIRS, structural MRI). Interpret QC metrics from fMRIPrep, MRIQC, FreeSurfer, MNE-Python, Homer3 to make justified inclusion/exclusion decisions.
-
-**Trigger keywords**: QC, quality control, fMRIPrep, MRIQC, motion, exclusion, subject filtering
-
-**Install**:
-```bash
-npx @yibeichen/claude-skills install neuroimaging-qc
-```
-
-### [scientific-writer](skills/scientific-writer/SKILL.md)
-Write rigorous scientific manuscripts following academic standards (IMRAD, citations, figures, CONSORT/STROBE/PRISMA guidelines).
-
-**Trigger keywords**: scientific writing, research papers, grant proposals, literature reviews
-
-**Install**:
-```bash
-npx @yibeichen/claude-skills install scientific-writer
-```
+| Skill | Install | Description |
+|-------|---------|-------------|
+| [dicom2fmriprep](skills/dicom2fmriprep/SKILL.md) | `npx @yibeichen/claude-skills install dicom2fmriprep` | Full DICOM→BIDS→fMRIPrep pipeline: heudiconv heuristics, BIDS validation fixes, fMRIPrep on SLURM via BABS. |
+| [fmri-ssm](skills/fmri-ssm/SKILL.md) | `npx @yibeichen/claude-skills install fmri-ssm` | State-space models for fMRI: HMM, SLDS, rSLDS, SNLDS for resting-state, task, and naturalistic designs. |
+| [neuroimaging-qc](skills/neuroimaging-qc/SKILL.md) | `npx @yibeichen/claude-skills install neuroimaging-qc` | Evidence-based QC decisions for fMRI, EEG, fNIRS using metrics from fMRIPrep, MRIQC, FreeSurfer. |
+| [bidsapp-nidm-standards](skills/bidsapp-nidm-standards/SKILL.md) | `npx @yibeichen/claude-skills install bidsapp-nidm-standards` | Standards for creating NIDM-integrated BIDSapps that run through BABS. |
+| [scientific-writer](skills/scientific-writer/SKILL.md) | `npx @yibeichen/claude-skills install scientific-writer` | Rigorous scientific manuscripts following IMRAD, CONSORT/STROBE/PRISMA guidelines. |
 
 ## Installation
 
