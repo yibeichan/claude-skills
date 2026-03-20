@@ -27,13 +27,13 @@ npx @yibeichen/claude-skills install bidsapp-nidm-standards
 Install all skills:
 
 ```bash
-npx @yibeichen/claude-skills install-all
+npx @yibeichan/claude-skills install-all
 ```
 
 List available skills:
 
 ```bash
-npx @yibeichen/claude-skills list
+npx @yibeichan/claude-skills list
 ```
 
 ### Custom Target Directory
@@ -41,7 +41,7 @@ npx @yibeichen/claude-skills list
 Install to a custom directory:
 
 ```bash
-npx @yibeichen/claude-skills install bidsapp-nidm-standards --target ./my-skills
+npx @yibeichan/claude-skills install bidsapp-nidm-standards --target ./my-skills
 ```
 
 ### Overwrite Existing Skills
@@ -49,7 +49,7 @@ npx @yibeichen/claude-skills install bidsapp-nidm-standards --target ./my-skills
 If a skill already exists, use `--overwrite` to replace it:
 
 ```bash
-npx @yibeichen/claude-skills install bidsapp-nidm-standards --overwrite
+npx @yibeichan/claude-skills install bidsapp-nidm-standards --overwrite
 ```
 
 ### Python Script (Alternative)
@@ -76,10 +76,10 @@ Remove installed skills:
 
 ```bash
 # Uninstall a specific skill
-npx @yibeichen/claude-skills uninstall neuroimaging-qc
+npx @yibeichan/claude-skills uninstall neuroimaging-qc
 
 # Uninstall all skills
-npx @yibeichen/claude-skills uninstall-all
+npx @yibeichan/claude-skills uninstall-all
 ```
 
 Or with Python:
