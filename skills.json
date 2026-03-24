@@ -42,6 +42,15 @@
       "dependencies": []
     },
     {
+      "name": "bids-format",
+      "version": "1.0.0",
+      "description": "BIDS standard for all data types — naming conventions, dataset creation, multi-modal conversion (heudiconv, dcm2bids, MNE-BIDS, pypet2bids), validation, derivatives structure, project organization, DataLad, sharing. Trigger keywords: BIDS format, BIDS dataset, BIDS naming, BIDS entities, BIDS convert, multi-modal BIDS, behavioral BIDS, EEG BIDS, DWI BIDS, PET BIDS, derivatives, phenotype, DataLad, OpenNeuro",
+      "path": "skills/bids-format",
+      "author": "Yibei Chen",
+      "tags": ["BIDS", "neuroimaging", "data-management", "multi-modal", "EEG", "PET", "DWI", "behavioral", "DataLad"],
+      "dependencies": []
+    },
+    {
       "name": "scientific-writer",
       "version": "1.0.0",
       "description": "Write rigorous scientific manuscripts following academic standards (IMRAD, citations, figures, CONSORT/STROBE/PRISMA guidelines). Trigger keywords: scientific writing, research papers, grant proposals, literature reviews",

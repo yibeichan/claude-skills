@@ -8,6 +8,7 @@ A collection of reusable Claude skills for neuroimaging research workflows and s
 |-------|---------|-------------|
 | [dicom2fmriprep](skills/dicom2fmriprep/SKILL.md) | `npx @yibeichan/claude-skills install dicom2fmriprep` | Full DICOM→BIDS→fMRIPrep pipeline: heudiconv heuristics, BIDS validation fixes, fMRIPrep on SLURM via BABS. |
 | [fmri-ssm](skills/fmri-ssm/SKILL.md) | `npx @yibeichan/claude-skills install fmri-ssm` | State-space models for fMRI: HMM, SLDS, rSLDS, SNLDS for resting-state, task, and naturalistic designs. |
+| [bids-format](skills/bids-format/SKILL.md) | `npx @yibeichan/claude-skills install bids-format` | BIDS standard for all data types — naming conventions, dataset creation, multi-modal conversion (heudiconv, MNE-BIDS, pypet2bids), validation, derivatives, project organization, DataLad, sharing. |
 | [neuroimaging-qc](skills/neuroimaging-qc/SKILL.md) | `npx @yibeichan/claude-skills install neuroimaging-qc` | Evidence-based QC decisions for fMRI, EEG, fNIRS using metrics from fMRIPrep, MRIQC, FreeSurfer. |
 | [bidsapp-nidm-standards](skills/bidsapp-nidm-standards/SKILL.md) | `npx @yibeichan/claude-skills install bidsapp-nidm-standards` | Standards for creating NIDM-integrated BIDSapps that run through BABS. |
 | [scientific-writer](skills/scientific-writer/SKILL.md) | `npx @yibeichan/claude-skills install scientific-writer` | Rigorous scientific manuscripts following IMRAD, CONSORT/STROBE/PRISMA guidelines. |

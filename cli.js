@@ -181,7 +181,7 @@ function uninstallAll(options = {}) {
 
 function printHelp() {
   printHeader();
-  console.log(`Usage: npx @yibeichen/claude-skills [command] [options]
+  console.log(`Usage: npx @yibeichan/claude-skills [command] [options]
 
 Commands:
   list, ls              List all available skills
@@ -196,12 +196,12 @@ Options:
   --help, -h            Show this help message
 
 Examples:
-  npx @yibeichen/claude-skills list
-  npx @yibeichen/claude-skills install bidsapp-nidm-standards
-  npx @yibeichen/claude-skills install scientific-writer --target ./my-skills
-  npx @yibeichen/claude-skills install-all --overwrite
-  npx @yibeichen/claude-skills uninstall neuroimaging-qc
-  npx @yibeichen/claude-skills uninstall-all
+  npx @yibeichan/claude-skills list
+  npx @yibeichan/claude-skills install bidsapp-nidm-standards
+  npx @yibeichan/claude-skills install scientific-writer --target ./my-skills
+  npx @yibeichan/claude-skills install-all --overwrite
+  npx @yibeichan/claude-skills uninstall neuroimaging-qc
+  npx @yibeichan/claude-skills uninstall-all
 `);
 }
 
@@ -238,7 +238,7 @@ function main() {
         installSkill(args[1], options);
       } else {
         console.error('\x1b[31mError: Please specify a skill name.\x1b[0m');
-        console.log("Run 'npx @yibeichen/claude-skills list' to see available skills.");
+        console.log("Run 'npx @yibeichan/claude-skills list' to see available skills.");
       }
       break;
 
@@ -251,7 +251,7 @@ function main() {
         uninstallSkill(args[1], options);
       } else {
         console.error('\x1b[31mError: Please specify a skill name.\x1b[0m');
-        console.log("Run 'npx @yibeichen/claude-skills list' to see available skills.");
+        console.log("Run 'npx @yibeichan/claude-skills list' to see available skills.");
       }
       break;
 
