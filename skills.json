@@ -1,9 +1,9 @@
 {
   "$schema": "https://skills.anthropic.com/schema/v1",
-  "name": "claude-skills",
+  "name": "whetstone",
   "version": "1.0.0",
-  "description": "Claude skills for neuroimaging research workflows and scientific writing",
-  "repository": "https://github.com/yibeichen/claude-skills",
+  "description": "Agent skills that sharpen research workflows — neuroimaging pipelines and scientific writing",
+  "repository": "https://github.com/yibeichan/whetstone",
   "skills": [
     {
       "name": "bidsapp-nidm-standards",
@@ -48,6 +48,15 @@
       "path": "skills/bids-format",
       "author": "Yibei Chen",
       "tags": ["BIDS", "neuroimaging", "data-management", "multi-modal", "EEG", "PET", "DWI", "behavioral", "DataLad"],
+      "dependencies": []
+    },
+    {
+      "name": "neuro-plotting",
+      "version": "1.0.0",
+      "description": "Publication-quality matplotlib plotting for scientific papers with deep cognitive neuroscience support. Covers colorblind-friendly palettes, compact figure sizing, font scaling, colorbar placement, brain surface rendering (surfplot, yabplot, nilearn), Yeo-7 network colors, transition matrices, state occupancy, dwell times, connectivity heatmaps, multi-panel composition. Trigger keywords: matplotlib, figure, plot, colormap, colorbar, brain surface, Yeo network, heatmap, transition matrix, dwell time, DPI, font size, journal figure",
+      "path": "skills/neuro-plotting",
+      "author": "Yibei Chen",
+      "tags": ["neuroimaging", "plotting", "matplotlib", "visualization", "brain-surfaces", "publication"],
       "dependencies": []
     },
     {

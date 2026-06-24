@@ -1,10 +1,10 @@
 {
-  "name": "@yibeichan/claude-skills",
-  "version": "1.1.1",
-  "description": "Claude skills for neuroimaging research workflows and scientific writing",
+  "name": "@yibeichan/whetstone",
+  "version": "2.0.0",
+  "description": "Agent skills that sharpen research workflows — neuroimaging pipelines and scientific writing",
   "type": "module",
   "bin": {
-    "claude-skills": "./cli.js"
+    "whetstone": "./cli.js"
   },
   "scripts": {
     "list": "node cli.js list",
@@ -26,12 +26,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yibeichen/claude-skills.git"
+    "url": "https://github.com/yibeichan/whetstone.git"
   },
   "bugs": {
-    "url": "https://github.com/yibeichen/claude-skills/issues"
+    "url": "https://github.com/yibeichan/whetstone/issues"
   },
-  "homepage": "https://github.com/yibeichen/claude-skills#readme",
+  "homepage": "https://github.com/yibeichan/whetstone#readme",
   "engines": {
     "node": ">=18.0.0"
   },

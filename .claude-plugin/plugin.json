@@ -1,6 +1,6 @@
 {
-    "name": "claude-skills",
-    "description": "customized claude skills",
+    "name": "whetstone",
+    "description": "Agent skills that sharpen research workflows — neuroimaging and scientific writing",
     "version": "1.0.0",
     "author": {
         "name": "Yibei Chen"
