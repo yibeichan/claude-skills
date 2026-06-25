@@ -24,7 +24,7 @@ const manifest = JSON.parse(fs.readFileSync(path.join(__dirname, 'skills.json'),
 const DEFAULT_SKILLS_DIR = path.join(process.cwd(), '.claude', 'skills');
 
 function printHeader() {
-  console.log(`\x1b[36mClaude Skills\x1b[0m v${packageJson.version}`);
+  console.log(`\x1b[36mWhetstone\x1b[0m v${packageJson.version}`);
   console.log(`Repository: ${packageJson.repository.url}\n`);
 }
 
@@ -71,7 +71,7 @@ function installSkill(skillName, options = {}) {
 
   if (!skill) {
     console.error(`\x1b[31mError: Skill '${skillName}' not found.\x1b[0m`);
-    console.log("Run 'npx claude-skills list' to see available skills.");
+    console.log("Run 'npx @yibeichan/whetstone list' to see available skills.");
     return false;
   }
 
@@ -181,7 +181,7 @@ function uninstallAll(options = {}) {
 
 function printHelp() {
   printHeader();
-  console.log(`Usage: npx @yibeichan/claude-skills [command] [options]
+  console.log(`Usage: npx @yibeichan/whetstone [command] [options]
 
 Commands:
   list, ls              List all available skills
@@ -196,12 +196,12 @@ Options:
   --help, -h            Show this help message
 
 Examples:
-  npx @yibeichan/claude-skills list
-  npx @yibeichan/claude-skills install bidsapp-nidm-standards
-  npx @yibeichan/claude-skills install scientific-writer --target ./my-skills
-  npx @yibeichan/claude-skills install-all --overwrite
-  npx @yibeichan/claude-skills uninstall neuroimaging-qc
-  npx @yibeichan/claude-skills uninstall-all
+  npx @yibeichan/whetstone list
+  npx @yibeichan/whetstone install bidsapp-nidm-standards
+  npx @yibeichan/whetstone install scientific-writer --target ./my-skills
+  npx @yibeichan/whetstone install-all --overwrite
+  npx @yibeichan/whetstone uninstall neuroimaging-qc
+  npx @yibeichan/whetstone uninstall-all
 `);
 }
 
@@ -238,7 +238,7 @@ function main() {
         installSkill(args[1], options);
       } else {
         console.error('\x1b[31mError: Please specify a skill name.\x1b[0m');
-        console.log("Run 'npx @yibeichan/claude-skills list' to see available skills.");
+        console.log("Run 'npx @yibeichan/whetstone list' to see available skills.");
       }
       break;
 
@@ -251,7 +251,7 @@ function main() {
         uninstallSkill(args[1], options);
       } else {
         console.error('\x1b[31mError: Please specify a skill name.\x1b[0m');
-        console.log("Run 'npx @yibeichan/claude-skills list' to see available skills.");
+        console.log("Run 'npx @yibeichan/whetstone list' to see available skills.");
       }
       break;
 
